@@ -6,45 +6,47 @@
 }
 
 body {
-    font-family: 'Michroma', sans-serif;
-    background-color: #1a1a1a; /* Dark gray for professional look */
-    color: #e0e0e0; /* Light gray text for readability */
-    line-height: 1.6;
-    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff; /* White background like CV */
+    color: #000000; /* Black text for contrast */
+    line-height: 1.7;
+    padding: 2.5rem;
 }
 
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 3rem;
-    background: linear-gradient(180deg, #2c2c2c, #1a1a1a); /* Subtle gradient */
+    margin-bottom: 3.5rem;
     padding: 2rem;
-    border-radius: 8px;
+    background: #f8f8f8; /* Light gray for subtle contrast */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: none; /* No all-caps */
 }
 
 header p {
     font-size: 1.1rem;
-    color: #b0b0b0;
+    color: #666666;
     margin: 0.5rem 0;
 }
 
 nav a {
-    color: #b0b0b0;
+    color: #333333;
     text-decoration: none;
     margin: 0 1.5rem;
     font-size: 1rem;
+    font-weight: 600;
+    text-transform: none; /* No all-caps */
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #00b7b7; /* Teal accent for hover */
+    color: #666666; /* Gray hover */
 }
 
 /* Sections */
@@ -55,38 +57,46 @@ section {
 
 h2 {
     font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    font-weight: 700;
+    text-transform: none; /* No all-caps */
     margin-bottom: 1.5rem;
-    color: #fff;
-    border-bottom: 2px solid #00b7b7;
+    color: #000000;
+    border-bottom: 1px solid #cccccc; /* Light gray border */
     padding-bottom: 0.5rem;
 }
 
 p {
     font-size: 1rem;
-    color: #d0d0d0;
+    color: #333333;
     margin-bottom: 1rem;
 }
 
 /* Mobile Apps Sliders */
 .project {
     margin-bottom: 3rem;
-    background: #2c2c2c; /* Slightly lighter card background */
     padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: #f8f8f8; /* Light gray card */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .project h3 {
-    font-size: 1.4rem;
-    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: none; /* No all-caps */
+    color: #000000;
     margin-bottom: 0.5rem;
 }
 
 .swiper-container {
     width: 100%;
-    height: 450px; /* Increased height for better image fit */
+    height: 400px; /* Adjusted for image fit */
     margin-top: 1rem;
     position: relative;
     overflow: hidden;
@@ -102,16 +112,16 @@ p {
     width: 100%;
     max-width: 300px;
     height: 100%;
-    max-height: 600px;
+    max-height: 550px;
     object-fit: contain;
-    border: 1px solid #444;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 183, 183, 0.2); /* Teal shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .swiper-button-next, .swiper-button-prev {
-    color: #00b7b7;
-    background: rgba(44, 44, 44, 0.7);
+    color: #666666;
+    background: rgba(255, 255, 255, 0.8);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -122,26 +132,26 @@ p {
 }
 
 .swiper-button-next:hover, .swiper-button-prev:hover {
-    background: rgba(0, 183, 183, 0.7);
+    background: rgba(200, 200, 200, 0.8);
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .swiper-pagination {
     position: absolute;
-    bottom: -30px; /* Move pagination below slider */
+    bottom: -30px; /* Pagination below slider */
     padding: 10px 0;
 }
 
 .swiper-pagination-bullet {
-    background: #b0b0b0;
+    background: #cccccc;
     opacity: 0.7;
 }
 
 .swiper-pagination-bullet-active {
-    background: #00b7b7;
+    background: #666666;
     opacity: 1;
 }
 
@@ -149,51 +159,77 @@ p {
 .contact-icons {
     display: flex;
     justify-content: center;
-    gap: 3rem; /* Increased spacing */
+    gap: 2.5rem;
     margin-top: 1.5rem;
 }
 
 .contact-icons a {
-    color: #b0b0b0;
-    font-size: 2.5rem; /* Larger icons */
+    color: #333333;
+    font-size: 2rem;
     transition: color 0.3s ease, transform 0.3s ease;
-    background: #2c2c2c;
-    padding: 0.8rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .contact-icons a:hover {
-    color: #00b7b7;
-    transform: translateY(-5px); /* Lift effect on hover */
+    color: #666666;
+    transform: translateY(-3px);
 }
 
 /* Data Science Projects */
 .project a {
-    color: #00b7b7;
+    color: #666666;
     text-decoration: none;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .project a:hover {
-    color: #00e0e0;
+    color: #333333;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 1.5rem 0;
-    border-top: 1px solid #444;
-    color: #b0b0b0;
+    padding: 2rem 0;
+    background: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-icons a {
+    color: #333333;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #666666;
+    transform: translateY(-3px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    header h1 { font-size: 2rem; }
+    header h1 { font-size: 1.8rem; }
     h2 { font-size: 1.5rem; }
     .project h3 { font-size: 1.2rem; }
     .swiper-container { height: 350px; }
     .swiper-slide img { max-width: 250px; max-height: 500px; }
-    .contact-icons a { font-size: 2rem; padding: 0.6rem; }
-    .contact-icons { gap: 2rem; }
+    .contact-icons a, .footer-icons a { font-size: 1.8rem; }
+    .contact-icons, .footer-icons { gap: 2rem; }
 }
