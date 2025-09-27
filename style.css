@@ -1,0 +1,84 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font - import from Google Fonts */
+    background-color: #000;
+    color: #FFF;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Import Futuristic Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+nav a {
+    color: #CCC;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00FF00; /* Neon green for futurism */
+}
+
+/* Sections */
+section {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+/* Slider Styles */
+.swiper-container {
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2); /* Subtle neon glow */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #CCC;
+}
+
+.swiper-pagination-bullet-active {
+    background: #00FF00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .swiper-container { height: 300px; }
+}
