@@ -1,23 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper('.swiper-container', {
-        loop: true, // Infinite loop
-        autoplay: {
-            delay: 3000, // Auto-slide every 3 seconds
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        // Responsive breakpoints
-        breakpoints: {
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-        }
+    const sliders = document.querySelectorAll('.swiper-container');
+    sliders.forEach(slider => {
+        const project = slider.getAttribute('data-project');
+        new Swiper(slider, {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: `.swiper-container[data-project="${project}"] .swiper-pagination`,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: `.swiper-container[data-project="${project}"] .swiper-button-next`,
+                prevEl: `.swiper-container[data-project="${project}"] .swiper-button-prev`,
+            },
+            breakpoints: {
+                640: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 40 },
+            }
+        });
     });
 });
