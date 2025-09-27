@@ -4,10 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const project = slider.getAttribute('data-project');
         new Swiper(slider, {
             loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
             pagination: {
                 el: `.swiper-container[data-project="${project}"] .swiper-pagination`,
                 clickable: true,
