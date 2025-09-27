@@ -160,3 +160,15 @@ footer {
     .swiper-container { height: 300px; }
     .swiper-slide img { max-width: 250px; }
 }
+
+/* Contact Icons */
+.icon {
+    color: #CCC;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    transition: color 0.3s;
+}
+
+ul li:hover .icon {
+    color: #00FF00; /* Neon green hover to match theme */
+}
