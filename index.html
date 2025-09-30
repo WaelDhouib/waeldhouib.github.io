@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wael Dhouib's Portfolio</title>
     <link rel="stylesheet" href="assets/swiper-bundle.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Wael Dhouib</h1>
-        <p>Flutter Developer with Data Science Background</p>
+    <header class="intro">
+        <div class="intro-content">
+            <img src="assets/images/photo.jpg" alt="Wael Dhouib" class="intro-photo">
+            <div class="intro-text">
+                <span class="intro-small">I'm</span>
+                <h1>Wael Dhouib</h1>
+                <p class="intro-title">Flutter Developer</p>
+                <div class="contact-icons">
+                    <a href="mailto:your.email@example.com" aria-label="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/WaelDhouib" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/your-profile" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
         <nav>
             <a href="#about">About</a>
-            <a href="#mobile-projects">Mobile Apps</a>
-            <a href="#ds-projects">Data Science Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -24,18 +35,53 @@
     <main>
         <!-- About Section -->
         <section id="about">
+            <h2>About Me</h2>
             <p>I’m a mobile developer specializing in Flutter, currently at Wind Consulting in Tunisia, and seeking opportunities in France or Europe to contribute to impactful projects in dynamic, collaborative teams.</p>
             <p>With a year of hands-on experience, I’ve built internal applications like <strong>Wind PDA</strong>, an Android inventory management app integrated with ERP systems, and contributed to <strong>Wind ERP Mobile</strong>, <strong>Autopal</strong>, and the UI design for <strong>ESS Mobile</strong>. My work spans UI design, API integration, and performance optimization.</p>
             <p>I hold an engineering degree in computer science with a focus on data science, enhancing my versatility in handling structured data and backend logic. Fluent in Arabic, French, and English, I’m adaptable, team-oriented, and open to relocation.</p>
         </section>
 
-        <!-- Mobile Apps Section -->
-        <section id="mobile-projects">
-            <h2>Mobile App Projects</h2>
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-briefcase stat-icon"></i>
+                    <h3>1+ Years</h3>
+                    <p>Professional Experience in Mobile Development</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-graduation-cap stat-icon"></i>
+                    <h3>Engineering Degree</h3>
+                    <p>In Computer Science with Data Science Focus</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-code stat-icon"></i>
+                    <h3>5+ Apps</h3>
+                    <p>Developed and Deployed Using Flutter</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-bar stat-icon"></i>
+                    <h3>3 DS Projects</h3>
+                    <p>Completed in Machine Learning and Analytics</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-language stat-icon"></i>
+                    <h3>3 Languages</h3>
+                    <p>Fluent in Arabic, French, and English</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <!-- Mobile App Projects -->
+            <h3>Mobile App Projects</h3>
             <!-- Wind PDA Slider -->
             <div class="project">
-                <h3>Wind PDA</h3>
+                <h4>Wind PDA</h4>
                 <p>An Android inventory management app integrated with our ERP system, developed independently with Flutter.</p>
                 <div class="swiper-container" data-project="wind-pda">
                     <div class="swiper-wrapper">
@@ -54,7 +100,7 @@
 
             <!-- Wind ERP Mobile Slider -->
             <div class="project">
-                <h3>Wind ERP Mobile</h3>
+                <h4>Wind ERP Mobile</h4>
                 <p>A mobile interface for ERP system management, built with Flutter for seamless performance.</p>
                 <div class="swiper-container" data-project="wind-erp">
                     <div class="swiper-wrapper">
@@ -72,7 +118,7 @@
 
             <!-- Autopal Slider -->
             <div class="project">
-                <h3>Autopal</h3>
+                <h4>Autopal</h4>
                 <p>A Flutter-based mobile app for streamlined automotive services.</p>
                 <div class="swiper-container" data-project="autopal">
                     <div class="swiper-wrapper">
@@ -101,7 +147,7 @@
 
             <!-- ESS Mobile Slider -->
             <div class="project">
-                <h3>ESS Mobile</h3>
+                <h4>ESS Mobile</h4>
                 <p>Designed the user interface for a Flutter-based employee self-service mobile app.</p>
                 <div class="swiper-container" data-project="ess-mobile">
                     <div class="swiper-wrapper">
@@ -117,21 +163,35 @@
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
-        </section>
 
-        <!-- Data Science Projects -->
-        <section id="ds-projects">
-            <h2>Data Science Projects</h2>
+            <!-- Wind Repair Slider -->
             <div class="project">
-                <h3><a href="assets/pdf/report.pdf">Prepaid Mobile Subscribers Segmentation</a></h3>
+                <h4>Wind Repair</h4>
+                <p>A Flutter-based mobile app for managing repair services.</p>
+                <div class="swiper-container" data-project="wind-repair">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/images/wind-repair/screenshot-1.png" alt="Wind Repair Screenshot 1"></div>
+                        <div class="swiper-slide"><img src="assets/images/wind-repair/screenshot-2.png" alt="Wind Repair Screenshot 2"></div>
+                        <div class="swiper-slide"><img src="assets/images/wind-repair/screenshot-3.png" alt="Wind Repair Screenshot 3"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <!-- Data Science Projects -->
+            <h3>Data Science Projects</h3>
+            <div class="project">
+                <h4><a href="assets/pdf/Report.pdf">Prepaid Mobile Subscribers Segmentation</a></h4>
                 <p>This project for Tunisie Telecom segmented 27,565 anonymous customers based on behavior during December 2016 and January 2017. Using a consumption-based approach, we created visualizations, interactive dashboards, and a classification model to optimize prepaid plan recommendations, enhancing customer experience and operational efficiency.</p>
             </div>
             <div class="project">
-                <h3><a href="https://github.com/WaelDhouib/sentiment-analysis">Tweets Sentiment Analysis</a></h3>
+                <h4><a href="https://github.com/WaelDhouib/sentiment-analysis">Tweets Sentiment Analysis</a></h4>
                 <p>Focused on #StressAwarenessDay, this project scraped Twitter data from November 7, 2018, to analyze user interactions and sentiments. Using NLP, we categorized tweets as positive, negative, or neutral, providing insights into the campaign’s effectiveness and emotional trends.</p>
             </div>
             <div class="project">
-                <h3><a href="https://github.com/WaelDhouib/delay-prediction">Flight Delay Prediction</a></h3>
+                <h4><a href="https://github.com/WaelDhouib/delay-prediction">Flight Delay Prediction</a></h4>
                 <p>Developed for Tunisair during AI Hack Tunisia 2022, this project used machine learning to predict flight delay durations. The model improves airline efficiency, reduces costs, and enhances passenger experience by enabling proactive delay management.</p>
             </div>
         </section>
@@ -139,12 +199,7 @@
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact</h2>
-            <p>Reach out to discuss opportunities or collaborations:</p>
-            <div class="contact-icons">
-                <a href="mailto:your.email@example.com" aria-label="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/WaelDhouib" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/your-profile" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            </div>
+            <p>Reach out to discuss opportunities or collaborations.</p>
         </section>
     </main>
 
@@ -164,4 +219,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
