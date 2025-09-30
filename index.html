@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
     <div class="dot-nav">
-        <a href="#intro" class="dot"></a>
-        <a href="#about" class="dot"></a>
-        <a href="#experience" class="dot"></a>
-        <a href="#projects" class="dot"></a>
-        <a href="#contact" class="dot"></a>
+        <a href="#intro" class="dot" data-section="intro"></a>
+        <a href="#about" class="dot" data-section="about"></a>
+        <a href="#experience" class="dot" data-section="experience"></a>
+        <a href="#projects" class="dot" data-section="projects"></a>
+        <a href="#contact" class="dot" data-section="contact"></a>
     </div>
 
     <header class="intro" id="intro">
         <div class="intro-content">
             <img src="assets/images/photo.jpg" alt="Wael Dhouib" class="intro-photo">
             <div class="intro-text">
-                <span class="intro-small">I'm</span>
                 <h1>Wael Dhouib</h1>
                 <p class="intro-title">Flutter Developer</p>
                 <div class="contact-icons">
@@ -69,11 +69,6 @@
                     <p>Developed and Deployed Using Flutter</p>
                 </div>
                 <div class="stat-card">
-                    <i class="fas fa-chart-bar stat-icon"></i>
-                    <h3>3 DS Projects</h3>
-                    <p>Completed in Machine Learning and Analytics</p>
-                </div>
-                <div class="stat-card">
                     <i class="fas fa-language stat-icon"></i>
                     <h3>3 Languages</h3>
                     <p>Fluent in Arabic, French, and English</p>
@@ -84,9 +79,6 @@
         <!-- Projects Section -->
         <section id="projects">
             <h2>Projects</h2>
-
-            <!-- Mobile App Projects -->
-            <h3>Mobile App Projects</h3>
             <!-- Wind PDA Slider -->
             <div class="project">
                 <h4>Wind PDA</h4>
@@ -171,21 +163,6 @@
                     <div class="swiper-button-prev"></div>
                 </div>
             </div>
-
-            <!-- Data Science Projects -->
-            <h3>Data Science Projects</h3>
-            <div class="project">
-                <h4><a href="assets/pdf/report.pdf">Prepaid Mobile Subscribers Segmentation</a></h4>
-                <p>This project for Tunisie Telecom segmented 27,565 anonymous customers based on behavior during December 2016 and January 2017. Using a consumption-based approach, we created visualizations, interactive dashboards, and a classification model to optimize prepaid plan recommendations, enhancing customer experience and operational efficiency.</p>
-            </div>
-            <div class="project">
-                <h4><a href="https://github.com/WaelDhouib/sentiment-analysis">Tweets Sentiment Analysis</a></h4>
-                <p>Focused on #StressAwarenessDay, this project scraped Twitter data from November 7, 2018, to analyze user interactions and sentiments. Using NLP, we categorized tweets as positive, negative, or neutral, providing insights into the campaign’s effectiveness and emotional trends.</p>
-            </div>
-            <div class="project">
-                <h4><a href="https://github.com/WaelDhouib/delay-prediction">Flight Delay Prediction</a></h4>
-                <p>Developed for Tunisair during AI Hack Tunisia 2022, this project used machine learning to predict flight delay durations. The model improves airline efficiency, reduces costs, and enhances passenger experience by enabling proactive delay management.</p>
-            </div>
         </section>
 
         <!-- Contact Section -->
@@ -197,6 +174,11 @@
 
     <footer>
         <div class="footer-content">
+            <div class="footer-icons">
+                <a href="mailto:your.email@example.com" aria-label="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/WaelDhouib" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/your-profile" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            </div>
             <nav>
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
