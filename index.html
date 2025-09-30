@@ -10,7 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header class="intro">
+    <div class="dot-nav">
+        <a href="#intro" class="dot"></a>
+        <a href="#about" class="dot"></a>
+        <a href="#experience" class="dot"></a>
+        <a href="#projects" class="dot"></a>
+        <a href="#contact" class="dot"></a>
+    </div>
+
+    <header class="intro" id="intro">
         <div class="intro-content">
             <img src="assets/images/photo.jpg" alt="Wael Dhouib" class="intro-photo">
             <div class="intro-text">
@@ -47,7 +55,7 @@
             <div class="stats-container">
                 <div class="stat-card">
                     <i class="fas fa-briefcase stat-icon"></i>
-                    <h3>1+ Years</h3>
+                    <h3>1 Year 4 Months</h3>
                     <p>Professional Experience in Mobile Development</p>
                 </div>
                 <div class="stat-card">
@@ -164,26 +172,10 @@
                 </div>
             </div>
 
-            <!-- Wind Repair Slider -->
-            <div class="project">
-                <h4>Wind Repair</h4>
-                <p>A Flutter-based mobile app for managing repair services.</p>
-                <div class="swiper-container" data-project="wind-repair">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="assets/images/wind-repair/screenshot-1.png" alt="Wind Repair Screenshot 1"></div>
-                        <div class="swiper-slide"><img src="assets/images/wind-repair/screenshot-2.png" alt="Wind Repair Screenshot 2"></div>
-                        <div class="swiper-slide"><img src="assets/images/wind-repair/screenshot-3.png" alt="Wind Repair Screenshot 3"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-
             <!-- Data Science Projects -->
             <h3>Data Science Projects</h3>
             <div class="project">
-                <h4><a href="assets/pdf/Report.pdf">Prepaid Mobile Subscribers Segmentation</a></h4>
+                <h4><a href="assets/pdf/report.pdf">Prepaid Mobile Subscribers Segmentation</a></h4>
                 <p>This project for Tunisie Telecom segmented 27,565 anonymous customers based on behavior during December 2016 and January 2017. Using a consumption-based approach, we created visualizations, interactive dashboards, and a classification model to optimize prepaid plan recommendations, enhancing customer experience and operational efficiency.</p>
             </div>
             <div class="project">
@@ -205,12 +197,12 @@
 
     <footer>
         <div class="footer-content">
-            <p>Connect with me</p>
-            <div class="footer-icons">
-                <a href="mailto:your.email@example.com" aria-label="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/WaelDhouib" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/your-profile" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
             <p>&copy; 2025 Wael Dhouib. All rights reserved.</p>
         </div>
     </footer>
@@ -219,4 +211,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
