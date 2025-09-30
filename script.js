@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const swiper = new Swiper(slider, {
             loop: true,
             autoplay: {
-                delay: 5000, // Slower animation (5 seconds)
+                delay: 5000,
                 disableOnInteraction: false,
             },
             pagination: {
@@ -60,5 +60,5 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.addEventListener('scroll', setActiveDot);
-    setActiveDot(); // Initial call
+    setActiveDot();
 });
