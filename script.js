@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('header, section');
 
     const setActiveDot = () => {
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjusted for full-screen
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
