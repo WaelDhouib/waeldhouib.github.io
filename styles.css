@@ -824,16 +824,14 @@ body.dark-mode .footer-content p {
 /* Narrow screens (single image slider) */
 @media (max-width: 640px) {
     .swiper-container {
-        width: fit-content;
+        width: auto;
         max-width: 100%;
-        display: block;
+        display: inline-block;
         padding: 0;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .swiper-slide {
-        width: fit-content;
+        width: auto;
         max-width: 100%;
     }
 
@@ -841,14 +839,13 @@ body.dark-mode .footer-content p {
         width: auto;
         max-width: 100%;
         height: auto;
-        display: block;
     }
 
     .swiper-button-next {
-        right: -5px;
+        right: 10px;
     }
 
     .swiper-button-prev {
-        left: -5px;
+        left: 10px;
     }
 }
