@@ -63,12 +63,12 @@ body.dark-mode {
 }
 
 body.dark-mode .theme-toggle {
-    background: #ffffff;
+    background: #000000;
     color: #ffffff;
 }
 
 body.dark-mode .theme-toggle:hover {
-    background: #cccccc;
+    background: #333333;
 }
 
 /* Dot Nav */
@@ -160,14 +160,14 @@ body.dark-mode .intro-photo {
 }
 
 .intro h1 {
-    font-size: 3.2rem;
-    font-weight: 800;
+    font-size: 2.8rem;
+    font-weight: 700;
     margin: 0;
 }
 
 .intro-title {
-    font-size: 2.2rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 500;
     color: #999999;
     margin: 0;
 }
@@ -266,6 +266,14 @@ body.dark-mode nav a:hover {
     color: #cccccc;
 }
 
+/* Ensure no Swiper elements in intro */
+.intro .swiper-container,
+.intro .swiper-pagination,
+.intro .swiper-button-next,
+.intro .swiper-button-prev {
+    display: none !important;
+}
+
 /* Sections */
 section {
     width: 100%;
@@ -323,10 +331,11 @@ body.dark-mode .about-text p {
 
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     width: 100%;
+    justify-items: center;
 }
 
 .stat-card {
@@ -336,6 +345,8 @@ body.dark-mode .about-text p {
     text-align: center;
     border: 1px solid #d0d0d0;
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
 }
 
 body.dark-mode .stat-card {
@@ -434,7 +445,7 @@ body.dark-mode .project p {
     max-width: 100%;
     height: auto;
     margin-top: 1rem;
-    position: фунrelative;
+    position: relative;
     overflow: hidden;
     border-radius: 35px;
     z-index: 0;
@@ -672,11 +683,11 @@ body.dark-mode .footer-content p {
     }
 
     .intro h1 {
-        font-size: 2.7rem;
+        font-size: 2.3rem;
     }
 
     .intro-title {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
     }
 
     .contact-icons {
@@ -715,11 +726,13 @@ body.dark-mode .footer-content p {
     }
 
     .stats-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-items: center;
     }
 
     .stat-card {
         padding: 1.5rem;
+        max-width: 300px;
     }
 
     .swiper-container {
@@ -768,7 +781,7 @@ body.dark-mode .footer-content p {
     .footer-content nav {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.5rem;
         justify-items: center;
     }
 
