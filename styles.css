@@ -13,7 +13,8 @@ html, body {
 }
 
 body {
-    font-family: 'Lora', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     background-color: #ffffff;
     color: #000000;
     line-height: 1.7;
@@ -28,41 +29,34 @@ body.dark-mode {
 
 /* Theme Toggle */
 .theme-toggle {
-    background: #000000;
-    color: #ffffff;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    background: transparent;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
     margin: 0 1.5rem;
     vertical-align: middle;
 }
 
 .theme-toggle:hover {
     background: #333333;
+    color: #ffffff;
     transform: translateY(-3px);
 }
 
-.theme-toggle i {
-    font-size: 1.2rem;
-}
-
 body.dark-mode .theme-toggle {
-    background: #ffffff;
-    color: #000000;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 body.dark-mode .theme-toggle:hover {
     background: #cccccc;
-}
-
-body.dark-mode .theme-toggle .fa-sun {
-    font-weight: 900; /* Ensure filled sun icon for clarity */
+    color: #000000;
 }
 
 /* Dot Nav */
@@ -128,10 +122,12 @@ body.dark-mode .intro {
 .intro-content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     max-width: 1200px;
     width: 100%;
+    margin: 0 auto;
 }
 
 .intro-photo {
@@ -206,9 +202,9 @@ body.dark-mode .contact-icons a:hover {
     display: inline-block;
     margin-top: 1.5rem;
     padding: 0.8rem 1.5rem;
-    background: #666666;
-    color: #ffffff;
-    border: 2px solid #ffffff;
+    background: transparent;
+    color: #000000;
+    border: 2px solid #000000;
     border-radius: 25px;
     text-decoration: none;
     font-size: 1rem;
@@ -217,18 +213,19 @@ body.dark-mode .contact-icons a:hover {
 }
 
 .cv-button:hover {
-    background: #555555;
+    background: #333333;
+    color: #ffffff;
     transform: translateY(-3px);
 }
 
 body.dark-mode .cv-button {
-    background: #aaaaaa;
-    border: 2px solid #000000;
-    color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 body.dark-mode .cv-button:hover {
-    background: #999999;
+    background: #cccccc;
+    color: #000000;
 }
 
 nav {
@@ -349,6 +346,7 @@ body.dark-mode .stat-icon {
 
 .stat-card h3 {
     font-size: 1.6rem;
+    font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
@@ -442,7 +440,7 @@ body.dark-mode .project p {
     max-height: 800px;
     object-fit: cover;
     border: 1px solid #e0e0e0;
-    border-radius: 27px;
+    border-radius: 29px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -492,7 +490,7 @@ body.dark-mode .swiper-button-prev:hover {
 
 .swiper-pagination {
     position: absolute;
-    bottom: 10px;
+    bottom: -25px;
     width: 100%;
     text-align: center;
 }
@@ -711,7 +709,7 @@ body.dark-mode .footer-content p {
 
     .swiper-slide img {
         max-height: 600px;
-        border-radius: 27px;
+        border-radius: 29px;
         object-fit: cover;
     }
 
@@ -748,12 +746,8 @@ body.dark-mode .footer-content p {
     }
 
     .theme-toggle {
-        width: 28px;
-        height: 28px;
-    }
-
-    .theme-toggle i {
-        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 
     .dot-nav {
