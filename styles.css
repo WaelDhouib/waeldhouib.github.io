@@ -38,7 +38,7 @@ body.dark-mode {
     font-weight: 500;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    margin: 0 1.5rem;
+    margin: 0 1.5rem 0 0;
     vertical-align: middle;
 }
 
@@ -149,12 +149,13 @@ body.dark-mode .intro-photo {
 
 .intro h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 800;
     margin: 0;
 }
 
 .intro-title {
     font-size: 2rem;
+    font-weight: 600;
     color: #999999;
     margin: 0;
 }
@@ -419,11 +420,12 @@ body.dark-mode .project p {
 .swiper-container {
     width: 100%;
     max-width: 100%;
-    height: 800px;
+    height: auto;
     margin-top: 1rem;
     position: relative;
     overflow: hidden;
     z-index: 0;
+    aspect-ratio: 9 / 16; /* Default aspect ratio for mobile screenshots */
 }
 
 .swiper-slide {
@@ -431,16 +433,16 @@ body.dark-mode .project p {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .swiper-slide img {
     width: 100%;
     max-width: 100%;
     height: auto;
-    max-height: 800px;
-    object-fit: cover;
+    object-fit: contain;
     border: 1px solid #e0e0e0;
-    border-radius: 29px;
+    border-radius: 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -490,7 +492,7 @@ body.dark-mode .swiper-button-prev:hover {
 
 .swiper-pagination {
     position: absolute;
-    bottom: -25px;
+    bottom: -50px;
     width: 100%;
     text-align: center;
 }
@@ -583,12 +585,13 @@ body.dark-mode .contact-links a:hover {
 }
 
 footer {
-    width: 100%;
+    width: 100vw;
     text-align: center;
     background: #ffffff;
     color: #333333;
     padding: 2rem 0;
     border-top: 1px solid #e0e0e0;
+    margin: 0;
 }
 
 body.dark-mode footer {
@@ -604,6 +607,9 @@ body.dark-mode footer {
 
 .footer-content nav {
     margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-content nav a {
@@ -704,13 +710,13 @@ body.dark-mode .footer-content p {
     }
 
     .swiper-container {
-        height: 600px;
+        height: auto;
     }
 
     .swiper-slide img {
         max-height: 600px;
-        border-radius: 29px;
-        object-fit: cover;
+        border-radius: 30px;
+        object-fit: contain;
     }
 
     .swiper-button-next {
@@ -748,6 +754,7 @@ body.dark-mode .footer-content p {
     .theme-toggle {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
+        margin: 0 1rem 0 0;
     }
 
     .dot-nav {
