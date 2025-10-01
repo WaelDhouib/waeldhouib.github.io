@@ -6,14 +6,11 @@
     <title>Wael Dhouib's Portfolio</title>
     <link rel="stylesheet" href="assets/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
-    <button class="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-    </button>
     <div class="dot-nav">
         <a href="#intro" class="dot" data-section="intro"></a>
         <a href="#about" class="dot" data-section="about"></a>
@@ -29,11 +26,11 @@
                 <h1>Wael Dhouib</h1>
                 <p class="intro-title">Flutter Developer</p>
                 <div class="contact-icons">
-                    <a href="assets/images/pdf/cv.pdf" target="_blank" aria-label="Download CV" rel="noopener noreferrer" class="cv-link"><i class="fas fa-file-pdf"></i></a>
                     <a href="mailto:waeldhouib@outlook.com" aria-label="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
                     <a href="https://linkedin.com/in/waeldhouib" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/waeldhouib" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 </div>
+                <a href="assets/images/pdf/cv.pdf" target="_blank" class="cv-button" rel="noopener noreferrer">Download CV</a>
             </div>
         </div>
         <nav>
@@ -61,7 +58,7 @@
             <div class="stats-container">
                 <div class="stat-card">
                     <i class="fas fa-briefcase stat-icon"></i>
-                    <h3>1.3 Years</h3>
+                    <h3>1 Year</h3>
                     <p>Professional Experience in Mobile Development</p>
                 </div>
                 <div class="stat-card">
@@ -104,6 +101,7 @@
                 </div>
             </div>
 
+ aitVersionId="3b6c693f-be7f-44e1-841f-45f22305b33e" title="index.html" contentType="text/html">
             <!-- Wind ERP Mobile Slider -->
             <div class="project">
                 <h4>Wind ERP Mobile</h4>
@@ -171,28 +169,32 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact and Footer Section -->
         <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:waeldhouib@outlook.com" aria-label="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/waeldhouib" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/waeldhouib" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <div class="contact-footer-container">
+                <div class="contact-content">
+                    <h2>Contact</h2>
+                    <div class="contact-links">
+                        <a href="mailto:waeldhouib@outlook.com" aria-label="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+                        <a href="https://linkedin.com/in/waeldhouib" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/waeldhouib" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <footer>
+                    <div class="footer-content">
+                        <nav>
+                            <a href="#about">About</a>
+                            <a href="#experience">Experience</a>
+                            <a href="#projects">Projects</a>
+                            <a href="#contact">Contact</a>
+                            <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+                        </nav>
+                        <p>&copy; 2025 Wael Dhouib. All rights reserved.</p>
+                    </div>
+                </footer>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-content">
-            <nav>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <p>&copy; 2025 Wael Dhouib. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="assets/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
