@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Night Mode Toggle
     const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
     const body = document.body;
+    const contactSection = document.querySelector('#contact');
 
     // Check current hour for automatic dark mode (6:00 PM to 6:00 AM)
     const currentHour = new Date().getHours();
@@ -11,19 +13,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply initial theme
     if (isDarkMode) {
         body.classList.add('dark-mode');
-        themeToggle.textContent = 'Light Mode';
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
     } else {
         body.classList.remove('dark-mode');
-        themeToggle.textContent = 'Dark Mode';
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
     }
+
+    // Toggle visibility of theme button based on footer visibility
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                themeToggle.classList.add('visible');
+            } else {
+                themeToggle.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(contactSection);
 
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         if (body.classList.contains('dark-mode')) {
-            themeToggle.textContent = 'Light Mode';
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
             localStorage.setItem('theme', 'dark');
         } else {
-            themeToggle.textContent = 'Dark Mode';
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
             localStorage.setItem('theme', 'light');
         }
     });
