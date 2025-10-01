@@ -1,22 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Night Mode Toggle
     const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
     const body = document.body;
 
-    // Load saved theme from localStorage
-    if (localStorage.getItem('theme') === 'dark') {
+    // Check current hour for automatic dark mode (6:00 PM to 6:00 AM)
+    const currentHour = new Date().getHours();
+    let isDarkMode = localStorage.getItem('theme') === 'dark' || 
+                     (localStorage.getItem('theme') !== 'light' && (currentHour >= 18 || currentHour < 6));
+
+    // Apply initial theme
+    if (isDarkMode) {
         body.classList.add('dark-mode');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        themeToggle.textContent = 'Light Mode';
+    } else {
+        body.classList.remove('dark-mode');
+        themeToggle.textContent = 'Dark Mode';
     }
 
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         if (body.classList.contains('dark-mode')) {
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            themeToggle.textContent = 'Light Mode';
             localStorage.setItem('theme', 'dark');
         } else {
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            themeToggle.textContent = 'Dark Mode';
             localStorage.setItem('theme', 'light');
         }
     });
