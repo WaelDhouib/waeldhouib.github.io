@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Night Mode Toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    const body = document.body;
+
+    // Load saved theme from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
     // Initialize Swiper sliders
     const sliders = document.querySelectorAll('.swiper-container');
     sliders.forEach(slider => {
@@ -43,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('header, section');
 
     const setActiveDot = () => {
-        const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjusted for full-screen
+        const scrollPosition = window.scrollY + window.innerHeight / 3;
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
