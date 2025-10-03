@@ -400,24 +400,30 @@ body.dark-mode .stat-card p {
     padding: 0 2.5rem;
 }
 
-.skills-slider {
-    width: 100%;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
     max-width: 1200px;
-    height: auto;
-    margin-top: 1rem;
-    position: relative;
-    overflow: hidden;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: background 0.3s ease;
 }
 
-.skills-slider .swiper-slide {
+body.dark-mode .skills-grid {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.skill-item {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    justify-content: center;
 }
 
-.skills-slider .swiper-slide img {
+.skill-item img {
     width: 100px;
     height: 100px;
     object-fit: contain;
@@ -425,27 +431,35 @@ body.dark-mode .stat-card p {
     box-shadow: none;
 }
 
-body.dark-mode .skills-slider .swiper-slide img {
+body.dark-mode .skill-item img {
     filter: brightness(1.2);
 }
 
-.skills-slider .swiper-pagination {
-    bottom: -20px;
+.skill-item p {
+    font-size: 0.9rem;
+    color: #333333;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+body.dark-mode .skill-item p {
+    color: #cccccc;
 }
 
 @media (max-width: 768px) {
-    .skills-slider .swiper-slide {
-        width: 120px;
-        height: 120px;
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 1rem;
     }
 
-    .skills-slider .swiper-slide img {
+    .skill-item img {
         width: 80px;
         height: 80px;
     }
 
-    .skills-slider .swiper-pagination {
-        bottom: -40px;
+    .skill-item p {
+        font-size: 0.8rem;
     }
 }
 
@@ -513,7 +527,7 @@ body.dark-mode .project p {
     z-index: 0;
 }
 
-.swiper-container:not(.skills-slider) .swiper-slide {
+.swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -521,7 +535,7 @@ body.dark-mode .project p {
     height: auto;
 }
 
-.swiper-container:not(.skills-slider) .swiper-slide img {
+.swiper-slide img {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -531,7 +545,7 @@ body.dark-mode .project p {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-body.dark-mode .swiper-container:not(.skills-slider) .swiper-slide img {
+body.dark-mode .swiper-slide img {
     border: 1px solid #444444;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
@@ -765,15 +779,45 @@ body.dark-mode .footer-content p {
 
     .intro-nav {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "about experience skills"
+            ". projects contact";
+        gap: 0.3rem;
         justify-items: center;
+        align-items: center;
         margin-top: 2rem;
+        padding: 0.5rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .intro-nav a.nav-about {
+        grid-area: about;
+    }
+
+    .intro-nav a.nav-experience {
+        grid-area: experience;
+    }
+
+    .intro-nav a.nav-skills {
+        grid-area: skills;
+    }
+
+    .intro-nav a.nav-projects {
+        grid-area: projects;
+    }
+
+    .intro-nav a.nav-contact {
+        grid-area: contact;
     }
 
     .intro-nav a {
-        margin: 0.5rem 0;
-        font-size: 1rem;
+        margin: 0;
+        font-size: 0.9rem;
+        padding: 0.3rem;
+        text-align: center;
     }
 
     section {
@@ -805,12 +849,12 @@ body.dark-mode .footer-content p {
         max-width: 300px;
     }
 
-    .swiper-container:not(.skills-slider) {
+    .swiper-container {
         height: auto;
         border-radius: 33px;
     }
 
-    .swiper-container:not(.skills-slider) .swiper-slide img {
+    .swiper-slide img {
         max-height: 600px;
         border-radius: 33px;
         object-fit: contain;
@@ -882,7 +926,7 @@ body.dark-mode .footer-content p {
 
 /* Narrow screens (single image slider) */
 @media (max-width: 640px) {
-    .swiper-container:not(.skills-slider) {
+    .swiper-container {
         width: fit-content;
         max-width: 100%;
         display: block;
@@ -891,12 +935,12 @@ body.dark-mode .footer-content p {
         margin-right: auto;
     }
 
-    .swiper-container:not(.skills-slider) .swiper-slide {
+    .swiper-slide {
         width: fit-content;
         max-width: 100%;
     }
 
-    .swiper-container:not(.skills-slider) .swiper-slide img {
+    .swiper-slide img {
         width: auto;
         max-width: 100%;
         height: auto;
