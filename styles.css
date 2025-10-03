@@ -442,7 +442,8 @@ body.dark-mode .skill-icon.dark-mode {
 }
 
 .skill-item p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: #333333;
     margin-top: 0.5rem;
     text-align: center;
@@ -465,7 +466,8 @@ body.dark-mode .skill-item p {
     }
 
     .skill-item p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        font-weight: 500;
     }
 }
 
@@ -790,13 +792,14 @@ body.dark-mode .footer-content p {
         grid-template-areas: 
             "about experience skills"
             ". projects contact";
-        gap: 0.4rem;
+        gap: 0.3rem;
         justify-items: center;
         align-items: center;
         margin: 2rem auto;
         padding: 0.5rem;
         width: 100%;
-        max-width: 320px;
+        max-width: 300px;
+        box-sizing: border-box;
     }
 
     .intro-nav a.nav-about {
@@ -813,16 +816,18 @@ body.dark-mode .footer-content p {
 
     .intro-nav a.nav-projects {
         grid-area: projects;
+        justify-self: center;
     }
 
     .intro-nav a.nav-contact {
         grid-area: contact;
+        justify-self: center;
     }
 
     .intro-nav a {
         margin: 0;
-        font-size: 0.85rem;
-        padding: 0.3rem;
+        font-size: 0.8rem;
+        padding: 0.2rem;
         text-align: center;
     }
 
