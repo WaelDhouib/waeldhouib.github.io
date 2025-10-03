@@ -1,108 +1,76 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Night Mode Toggle
-    const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
-    const body = document.body;
-    const contactSection = document.querySelector('#contact');
-
-    // Check current hour for automatic dark mode (6:00 PM to 6:00 AM)
-    const currentHour = new Date().getHours();
-    let isDarkMode = localStorage.getItem('theme') === 'dark' || 
-                     (localStorage.getItem('theme') !== 'light' && (currentHour >= 18 || currentHour < 6));
-
-    // Apply initial theme
-    if (isDarkMode) {
-        body.classList.add('dark-mode');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-    } else {
-        body.classList.remove('dark-mode');
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
+document.addEventListener('DOMContentLoaded', () => {
+    // Time-based dark mode
+    const now = new Date();
+    const hours = now.getHours();
+    const isNight = hours >= 18 || hours < 6;
+    if (isNight) {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
     }
 
-    // Toggle visibility of theme button based on footer visibility
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                themeToggle.classList.add('visible');
-            } else {
-                themeToggle.classList.remove('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    observer.observe(contactSection);
-
+    // Theme toggle button
+    const themeToggle = document.querySelector('.theme-toggle');
     themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-            localStorage.setItem('theme', 'dark');
+        document.body.classList.toggle('dark-mode');
+        const icon = themeToggle.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.replace('fa-moon', 'fa-sun');
         } else {
-            themeIcon.classList.replace('fa-sun', 'fa-moon');
-            localStorage.setItem('theme', 'light');
+            icon.classList.replace('fa-sun', 'fa-moon');
         }
     });
 
-    // Initialize Swiper sliders
-    const sliders = document.querySelectorAll('.swiper-container');
-    sliders.forEach(slider => {
-        const project = slider.getAttribute('data-project');
-        const swiper = new Swiper(slider, {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: `.swiper-container[data-project="${project}"] .swiper-pagination`,
-                clickable: true,
-            },
-            navigation: {
-                nextEl: `.swiper-container[data-project="${project}"] .swiper-button-next`,
-                prevEl: `.swiper-container[data-project="${project}"] .swiper-button-prev`,
-            },
-            breakpoints: {
-                640: { slidesPerView: 1, spaceBetween: 20 },
-                768: { slidesPerView: 2, spaceBetween: 30 },
-                1024: { slidesPerView: 3, spaceBetween: 40 },
-            }
+    // Show/hide theme toggle based on footer visibility
+    const footer = document.querySelector('footer');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            themeToggle.classList.toggle('visible', entry.isIntersecting);
         });
+    }, { threshold: 0.1 });
+    observer.observe(footer);
 
-        // Auto-sliding only when in view
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    swiper.autoplay.start();
-                } else {
-                    swiper.autoplay.stop();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(slider);
-    });
-
-    // Dot navigation active state
+    // Dot navigation
     const dots = document.querySelectorAll('.dot');
-    const sections = document.querySelectorAll('header, section');
+    const sections = document.querySelectorAll('section, header');
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.3 };
 
-    const setActiveDot = () => {
-        const scrollPosition = window.scrollY + window.innerHeight / 3;
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.id;
                 dots.forEach(dot => {
-                    dot.classList.remove('active');
-                    if (dot.getAttribute('data-section') === sectionId) {
-                        dot.classList.add('active');
-                    }
+                    dot.classList.toggle('active', dot.getAttribute('data-section') === sectionId);
                 });
             }
         });
-    };
+    }, observerOptions);
 
-    window.addEventListener('scroll', setActiveDot);
-    setActiveDot();
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Initialize Swiper for projects
+    document.querySelectorAll('.swiper-container:not(.skills-slider)').forEach(container => {
+        new Swiper(container, {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 30 }
+            }
+        });
+    });
+
+    // Initialize Swiper for skills
+    new Swiper('.skills-slider', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        breakpoints: {
+            768: { slidesPerView: 4, spaceBetween: 30 },
+            1024: { slidesPerView: 6, spaceBetween: 40 }
+        }
+    });
 });
