@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => sectionObserver.observe(section));
 
     // Initialize Swiper for projects
-    document.querySelectorAll('.swiper-container:not(.skills-slider)').forEach(container => {
+    document.querySelectorAll('.swiper-container').forEach(container => {
         new Swiper(container, {
             slidesPerView: 1,
             spaceBetween: 10,
@@ -59,18 +59,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 1024: { slidesPerView: 3, spaceBetween: 30 }
             }
         });
-    });
-
-    // Initialize Swiper for skills
-    new Swiper('.skills-slider', {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: { delay: 3000, disableOnInteraction: false },
-        pagination: { el: '.swiper-pagination', clickable: true },
-        breakpoints: {
-            768: { slidesPerView: 4, spaceBetween: 30 },
-            1024: { slidesPerView: 6, spaceBetween: 40 }
-        }
     });
 });
